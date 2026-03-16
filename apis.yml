@@ -2,34 +2,44 @@ aid: thesportsdb
 name: TheSportsDB
 description: >-
   An open, crowd-sourced sports database of artwork and metadata with a free
-  sports API.The sports database is only possible, thanks to the hard work of
-  our users.If you like the site, please consider registering as an editor or
-  click below... 
+  sports API in JSON.
 type: Index
 position: Consumer
 access: 3rd-Party
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 tags:
-  - API
+  - Sports
+  - Database
+  - Free
 created: '2025-03-01'
-modified: '2025-03-01'
+modified: '2026-03-16'
 url: >-
   https://raw.githubusercontent.com/api-evangelist/thesportsdb/refs/heads/main/apis.yml
 specificationVersion: '0.19'
 apis:
   - aid: thesportsdb:thesportsdb
-    name: TheSportsDB
+    name: TheSportsDB API
     description: >-
       An open, crowd-sourced sports database of artwork and metadata with a free
-      sports API.The sports database is only possible, thanks to the hard work
-      of our users.If you like the site, please consider registering as an
-      editor or click below... 
-    humanURL: ' https://www.thesportsdb.com/'
+      sports API in JSON.
+    humanURL: https://www.thesportsdb.com/
+    baseURL: https://www.thesportsdb.com/api/v1/json/3
     tags:
-      - API
+      - Sports
+      - Database
+      - Free
     properties:
       - type: Documentation
-        url: ' https://www.thesportsdb.com/'
+        url: https://www.thesportsdb.com/documentation
+      - type: Website
+        url: https://www.thesportsdb.com/
+common:
+  - type: Website
+    url: https://www.thesportsdb.com/
+  - type: Documentation
+    url: https://www.thesportsdb.com/documentation
+  - type: Sign Up
+    url: https://www.thesportsdb.com/register
 maintainers:
   - FN: Kin Lane
-    email: info@apievangelist.com
+    email: kin@apievangelist.com
