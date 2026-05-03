@@ -1,0 +1,37 @@
+{
+  "request": {
+    "method": "GET",
+    "url": "https://www.thesportsdb.com/api/v1/json/3/searchteams.php",
+    "params": {
+      "t": "Arsenal"
+    }
+  },
+  "response": {
+    "status": 200,
+    "body": {
+      "teams": [
+        {
+          "idTeam": "133604",
+          "strTeam": "Arsenal",
+          "strTeamShort": "ARS",
+          "strAlternate": "The Gunners",
+          "intFormedYear": "1886",
+          "strLeague": "English Premier League",
+          "idLeague": "4328",
+          "strSport": "Soccer",
+          "strCountry": "England",
+          "strStadium": "Emirates Stadium",
+          "strStadiumLocation": "Holloway, London",
+          "intStadiumCapacity": "60704",
+          "strWebsite": "www.arsenal.com",
+          "strFacebook": "www.facebook.com/Arsenal",
+          "strTwitter": "twitter.com/Arsenal",
+          "strInstagram": "www.instagram.com/arsenal",
+          "strDescriptionEN": "Arsenal Football Club is a professional football club based in Islington, London, England, that competes in the Premier League, the top flight of English football.",
+          "strTeamBadge": "https://www.thesportsdb.com/images/media/team/badge/a1af2i1557005128.png",
+          "strTeamJersey": "https://www.thesportsdb.com/images/media/team/jersey/xtvhps1473506700.png"
+        }
+      ]
+    }
+  }
+}

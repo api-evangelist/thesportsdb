@@ -1,0 +1,76 @@
+{
+  "name": "TheSportsDB API Structure",
+  "description": "Structural documentation for TheSportsDB API resource types.",
+  "entities": [
+    {
+      "name": "Team",
+      "description": "A sports team with metadata, branding, and stadium data.",
+      "fields": [
+        { "name": "idTeam", "type": "string", "required": false, "description": "Team ID." },
+        { "name": "strTeam", "type": "string", "required": false, "description": "Team name." },
+        { "name": "strTeamShort", "type": "string", "required": false, "description": "Abbreviation." },
+        { "name": "strLeague", "type": "string", "required": false, "description": "League name." },
+        { "name": "strSport", "type": "string", "required": false, "description": "Sport type." },
+        { "name": "strCountry", "type": "string", "required": false, "description": "Country." },
+        { "name": "strStadium", "type": "string", "required": false, "description": "Stadium name." },
+        { "name": "intStadiumCapacity", "type": "string", "required": false, "description": "Capacity." },
+        { "name": "strTeamBadge", "type": "string (uri)", "required": false, "description": "Badge image URL." }
+      ]
+    },
+    {
+      "name": "Event",
+      "description": "A sports match or event.",
+      "fields": [
+        { "name": "idEvent", "type": "string", "required": false, "description": "Event ID." },
+        { "name": "strEvent", "type": "string", "required": false, "description": "Event name." },
+        { "name": "strLeague", "type": "string", "required": false, "description": "League name." },
+        { "name": "strSeason", "type": "string", "required": false, "description": "Season." },
+        { "name": "strHomeTeam", "type": "string", "required": false, "description": "Home team." },
+        { "name": "strAwayTeam", "type": "string", "required": false, "description": "Away team." },
+        { "name": "intHomeScore", "type": "string", "required": false, "description": "Home score." },
+        { "name": "intAwayScore", "type": "string", "required": false, "description": "Away score." },
+        { "name": "dateEvent", "type": "string (date)", "required": false, "description": "Event date." },
+        { "name": "strVenue", "type": "string", "required": false, "description": "Venue name." },
+        { "name": "strStatus", "type": "string", "required": false, "description": "Match status." }
+      ]
+    },
+    {
+      "name": "Player",
+      "description": "A sports player/athlete.",
+      "fields": [
+        { "name": "idPlayer", "type": "string", "required": false, "description": "Player ID." },
+        { "name": "strPlayer", "type": "string", "required": false, "description": "Player name." },
+        { "name": "strTeam", "type": "string", "required": false, "description": "Current team." },
+        { "name": "strSport", "type": "string", "required": false, "description": "Sport type." },
+        { "name": "dateBorn", "type": "string (date)", "required": false, "description": "Date of birth." },
+        { "name": "strNationality", "type": "string", "required": false, "description": "Nationality." },
+        { "name": "strPosition", "type": "string", "required": false, "description": "Playing position." }
+      ]
+    },
+    {
+      "name": "League",
+      "description": "A sports league or competition.",
+      "fields": [
+        { "name": "idLeague", "type": "string", "required": false, "description": "League ID." },
+        { "name": "strLeague", "type": "string", "required": false, "description": "League name." },
+        { "name": "strSport", "type": "string", "required": false, "description": "Sport type." },
+        { "name": "strCountry", "type": "string", "required": false, "description": "Country." },
+        { "name": "intFormedYear", "type": "string", "required": false, "description": "Year founded." },
+        { "name": "strBadge", "type": "string (uri)", "required": false, "description": "Badge image URL." }
+      ]
+    },
+    {
+      "name": "TableRow",
+      "description": "A standings table row for a team in a league season.",
+      "fields": [
+        { "name": "name", "type": "string", "required": false, "description": "Team name." },
+        { "name": "teamid", "type": "string", "required": false, "description": "Team ID." },
+        { "name": "played", "type": "string", "required": false, "description": "Games played." },
+        { "name": "win", "type": "string", "required": false, "description": "Wins." },
+        { "name": "loss", "type": "string", "required": false, "description": "Losses." },
+        { "name": "draw", "type": "string", "required": false, "description": "Draws." },
+        { "name": "total", "type": "string", "required": false, "description": "Points total." }
+      ]
+    }
+  ]
+}

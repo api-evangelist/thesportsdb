@@ -1,0 +1,78 @@
+{
+  "@context": {
+    "@vocab": "https://schema.org/",
+    "sportsdb": "https://www.thesportsdb.com/ontology/",
+    "SportsTeam": {
+      "@id": "https://schema.org/SportsTeam",
+      "@context": {
+        "idTeam": "https://schema.org/identifier",
+        "strTeam": "https://schema.org/name",
+        "strTeamShort": "https://schema.org/alternateName",
+        "strLeague": {
+          "@id": "https://schema.org/memberOf",
+          "@type": "@id"
+        },
+        "strSport": "https://schema.org/sport",
+        "strCountry": "https://schema.org/addressCountry",
+        "strStadium": {
+          "@id": "https://schema.org/location",
+          "@type": "@id"
+        },
+        "strWebsite": "https://schema.org/url",
+        "strDescriptionEN": "https://schema.org/description",
+        "strTeamBadge": "https://schema.org/logo",
+        "intFormedYear": "https://schema.org/foundingDate"
+      }
+    },
+    "SportsEvent": {
+      "@id": "https://schema.org/SportsEvent",
+      "@context": {
+        "idEvent": "https://schema.org/identifier",
+        "strEvent": "https://schema.org/name",
+        "strLeague": {
+          "@id": "https://schema.org/superEvent",
+          "@type": "@id"
+        },
+        "strHomeTeam": {
+          "@id": "https://schema.org/homeTeam",
+          "@type": "@id"
+        },
+        "strAwayTeam": {
+          "@id": "https://schema.org/awayTeam",
+          "@type": "@id"
+        },
+        "dateEvent": "https://schema.org/startDate",
+        "strVenue": {
+          "@id": "https://schema.org/location",
+          "@type": "@id"
+        },
+        "strStatus": "https://schema.org/eventStatus"
+      }
+    },
+    "Athlete": {
+      "@id": "https://schema.org/Person",
+      "@context": {
+        "idPlayer": "https://schema.org/identifier",
+        "strPlayer": "https://schema.org/name",
+        "strTeam": {
+          "@id": "https://schema.org/memberOf",
+          "@type": "@id"
+        },
+        "strSport": "https://schema.org/sport",
+        "dateBorn": "https://schema.org/birthDate",
+        "strNationality": "https://schema.org/nationality",
+        "strPosition": "https://schema.org/hasOccupation"
+      }
+    },
+    "SportsLeague": {
+      "@id": "https://schema.org/SportsOrganization",
+      "@context": {
+        "idLeague": "https://schema.org/identifier",
+        "strLeague": "https://schema.org/name",
+        "strSport": "https://schema.org/sport",
+        "strCountry": "https://schema.org/addressCountry",
+        "strBadge": "https://schema.org/logo"
+      }
+    }
+  }
+}

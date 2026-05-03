@@ -1,0 +1,149 @@
+vocabulary:
+  provider: TheSportsDB
+  description: >-
+    Vocabulary and taxonomy for TheSportsDB API, covering sports categories,
+    team metadata, player attributes, event types, league structures, and
+    sports data conventions used across the platform.
+  terms:
+    - term: TheSportsDB
+      definition: >-
+        An open, crowd-sourced sports database providing metadata and artwork
+        for teams, players, leagues, events, and venues across hundreds of sports worldwide.
+      tags:
+        - Core Concept
+        - Platform
+
+    - term: Team
+      definition: >-
+        A sports team/club entity including metadata like badge/crest,
+        stadium information, league membership, and social media links.
+      tags:
+        - Core Resource
+
+    - term: Player
+      definition: >-
+        An athlete associated with a sports team. Includes biography,
+        position, nationality, and career information.
+      tags:
+        - Core Resource
+
+    - term: Event
+      definition: >-
+        A sports match, game, or competition between two teams. Contains
+        scheduling data, scores (when completed), venue, and media.
+      tags:
+        - Core Resource
+        - Schedule
+
+    - term: League
+      definition: >-
+        A sports competition structure that organizes teams into a regular
+        season schedule (e.g., English Premier League, NBA, MLB, NFL).
+      tags:
+        - Core Resource
+        - Organization
+
+    - term: Season
+      definition: >-
+        A competitive year in a sports league. Formatted as "YYYY-YYYY"
+        for annual seasons (e.g., 2026-2027) or "YYYY" for single-year seasons.
+      tags:
+        - Temporal
+
+    - term: Standings Table
+      definition: >-
+        The ranking of teams in a league for a given season, showing
+        games played, wins, losses, draws, goals, and total points.
+      tags:
+        - Standings
+        - Season
+
+    - term: Badge
+      definition: >-
+        The graphical crest, logo, or shield representing a sports team,
+        league, or competition. Stored as an image URL.
+      tags:
+        - Media
+        - Branding
+
+    - term: Event Status
+      definition: >-
+        The current state of a sports event.
+      tags:
+        - Status
+      values:
+        - "Not Started": Event is scheduled but hasn't begun.
+        - "Match Finished": Event has concluded with final score.
+        - "In Progress": Event is currently ongoing.
+        - "Postponed": Event delayed to a future date.
+        - "Cancelled": Event will not take place.
+
+    - term: Free API Key
+      definition: >-
+        The TheSportsDB free tier uses API key "3" in the URL path
+        (e.g., /api/v1/json/3/). Premium subscribers replace "3" with
+        their personal API key for higher limits and v2 access.
+      tags:
+        - Authentication
+        - API Key
+
+    - term: strDescriptionEN
+      definition: >-
+        The English-language description or biography field used throughout
+        the TheSportsDB API for teams, players, leagues, and events.
+      tags:
+        - Field Convention
+        - Naming
+
+  domains:
+    - name: Teams
+      description: Sports clubs and organizations.
+      concepts:
+        - Team Name
+        - Short Name
+        - Badge
+        - Stadium
+        - League Membership
+        - Formation Year
+
+    - name: Players
+      description: Athletes and their careers.
+      concepts:
+        - Player Name
+        - Position
+        - Nationality
+        - Date of Birth
+        - Team Membership
+
+    - name: Events
+      description: Scheduled and completed sports contests.
+      concepts:
+        - Home Team
+        - Away Team
+        - Score
+        - Date
+        - Venue
+        - Status
+
+    - name: Competitions
+      description: Leagues, cups, and tournaments.
+      concepts:
+        - League
+        - Season
+        - Standings
+        - Cup Round
+
+    - name: Sports
+      description: Sport categories covered.
+      examples:
+        - Soccer
+        - Basketball
+        - Baseball
+        - American Football
+        - Ice Hockey
+        - Tennis
+        - Rugby
+        - Cricket
+        - Golf
+        - Cycling
+        - Motor Racing

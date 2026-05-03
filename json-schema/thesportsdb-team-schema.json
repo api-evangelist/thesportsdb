@@ -1,0 +1,76 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/api-evangelist/thesportsdb/blob/main/json-schema/thesportsdb-team-schema.json",
+  "title": "TheSportsDB Team",
+  "description": "A sports team record from TheSportsDB, including metadata, branding, and stadium information.",
+  "type": "object",
+  "properties": {
+    "idTeam": {
+      "type": "string",
+      "description": "Unique team identifier."
+    },
+    "strTeam": {
+      "type": "string",
+      "description": "Full team name."
+    },
+    "strTeamShort": {
+      "type": "string",
+      "description": "Short name or abbreviation."
+    },
+    "strAlternate": {
+      "type": "string",
+      "description": "Alternative team name."
+    },
+    "intFormedYear": {
+      "type": "string",
+      "description": "Year the team was founded."
+    },
+    "strLeague": {
+      "type": "string",
+      "description": "Name of the primary league."
+    },
+    "idLeague": {
+      "type": "string",
+      "description": "Primary league identifier."
+    },
+    "strSport": {
+      "type": "string",
+      "description": "Sport type (Soccer, Basketball, Baseball, etc.)."
+    },
+    "strCountry": {
+      "type": "string",
+      "description": "Country where the team is based."
+    },
+    "strStadium": {
+      "type": "string",
+      "description": "Home stadium or arena name."
+    },
+    "strStadiumLocation": {
+      "type": "string",
+      "description": "City or location of the stadium."
+    },
+    "intStadiumCapacity": {
+      "type": "string",
+      "description": "Stadium seating capacity."
+    },
+    "strWebsite": {
+      "type": "string",
+      "format": "uri",
+      "description": "Official team website URL."
+    },
+    "strDescriptionEN": {
+      "type": "string",
+      "description": "English language team description/biography."
+    },
+    "strTeamBadge": {
+      "type": "string",
+      "format": "uri",
+      "description": "URL to the team badge/crest image."
+    },
+    "strTeamJersey": {
+      "type": "string",
+      "format": "uri",
+      "description": "URL to the team jersey image."
+    }
+  }
+}

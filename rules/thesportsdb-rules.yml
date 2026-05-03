@@ -1,0 +1,74 @@
+rules:
+  thesportsdb-operation-summary-title-case:
+    description: All operation summaries must use Title Case.
+    message: "Operation summary '{{value}}' must use Title Case."
+    severity: warn
+    given: "$.paths[*][*].summary"
+    then:
+      function: pattern
+      functionOptions:
+        match: "^[A-Z][a-zA-Z0-9 ]*$"
+
+  thesportsdb-operation-ids-camel-case:
+    description: All operationIds must use camelCase.
+    message: "OperationId '{{value}}' must be camelCase."
+    severity: warn
+    given: "$.paths[*][*].operationId"
+    then:
+      function: pattern
+      functionOptions:
+        match: "^[a-z][a-zA-Z0-9]*$"
+
+  thesportsdb-tags-required:
+    description: All operations must have at least one tag.
+    message: "Operation at '{{path}}' must have at least one tag."
+    severity: error
+    given: "$.paths[*][get,post,put,patch,delete]"
+    then:
+      field: tags
+      function: truthy
+
+  thesportsdb-description-required:
+    description: All operations must have a description.
+    message: "Operation at '{{path}}' is missing a description."
+    severity: warn
+    given: "$.paths[*][get,post,put,patch,delete]"
+    then:
+      field: description
+      function: truthy
+
+  thesportsdb-php-path-suffix:
+    description: TheSportsDB API paths end in .php per v1 convention.
+    message: "Path '{{path}}' should end with .php per TheSportsDB v1 convention."
+    severity: info
+    given: "$.paths[*]~"
+    then:
+      function: pattern
+      functionOptions:
+        match: "\\.php$"
+
+  thesportsdb-200-response-required:
+    description: All GET operations must define a 200 response.
+    message: "GET operation at '{{path}}' must define a 200 response."
+    severity: error
+    given: "$.paths[*][get].responses"
+    then:
+      field: "200"
+      function: defined
+
+  thesportsdb-query-params-for-search:
+    description: Search operations should have at least one query parameter.
+    message: "Search operation at '{{path}}' must have at least one filter parameter."
+    severity: warn
+    given: "$.paths[?(@~'search|lookup')][get]"
+    then:
+      field: parameters
+      function: truthy
+
+  thesportsdb-response-schema-json:
+    description: All 200 responses must define a content schema.
+    message: "Response at '{{path}}' must define a content schema."
+    severity: warn
+    given: "$.paths[*][get].responses[200].content"
+    then:
+      function: truthy
