@@ -6,7 +6,7 @@ description: >-
   players, events, venues, and season standings across a wide range of sports
   worldwide including soccer, basketball, baseball, American football, hockey,
   tennis, and more.
-type: Contract
+kind: contract
 position: Consumer
 access: 3rd-Party
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
@@ -64,7 +64,7 @@ common:
     url: https://www.thesportsdb.com/
   - type: Documentation
     url: https://www.thesportsdb.com/documentation
-  - type: Sign Up
+  - type: SignUp
     url: https://www.thesportsdb.com/register
   - type: Pricing
     url: https://www.thesportsdb.com/patreon
