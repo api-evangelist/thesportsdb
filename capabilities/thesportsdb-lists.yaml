@@ -1,0 +1,152 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: TheSportsDB API — Lists
+  description: 'TheSportsDB API — Lists. 3 operations. Lead operation: List All Leagues. Self-contained Naftiko capability
+    covering one Thesportsdb business surface.'
+  tags:
+  - Thesportsdb
+  - Lists
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    THESPORTSDB_API_KEY: THESPORTSDB_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: thesportsdb-lists
+    baseUri: https://www.thesportsdb.com/api/v1/json/3
+    description: TheSportsDB API — Lists business capability. Self-contained, no shared references.
+    resources:
+    - name: all_leagues.php
+      path: /all_leagues.php
+      operations:
+      - name: listallleagues
+        method: GET
+        description: List All Leagues
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: all_sports.php
+      path: /all_sports.php
+      operations:
+      - name: listallsports
+        method: GET
+        description: List All Sports
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: search_all_teams.php
+      path: /search_all_teams.php
+      operations:
+      - name: listallteams
+        method: GET
+        description: List All Teams
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: l
+          in: query
+          type: string
+          description: League name (e.g., "English Premier League").
+        - name: s
+          in: query
+          type: string
+          description: Sport name (e.g., "Soccer").
+        - name: c
+          in: query
+          type: string
+          description: Country name (e.g., "England").
+  exposes:
+  - type: rest
+    namespace: thesportsdb-lists-rest
+    port: 8080
+    description: REST adapter for TheSportsDB API — Lists. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/all-leagues-php
+      name: all-leagues-php
+      description: REST surface for all_leagues.php.
+      operations:
+      - method: GET
+        name: listallleagues
+        description: List All Leagues
+        call: thesportsdb-lists.listallleagues
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/all-sports-php
+      name: all-sports-php
+      description: REST surface for all_sports.php.
+      operations:
+      - method: GET
+        name: listallsports
+        description: List All Sports
+        call: thesportsdb-lists.listallsports
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/search-all-teams-php
+      name: search-all-teams-php
+      description: REST surface for search_all_teams.php.
+      operations:
+      - method: GET
+        name: listallteams
+        description: List All Teams
+        call: thesportsdb-lists.listallteams
+        with:
+          l: rest.l
+          s: rest.s
+          c: rest.c
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: thesportsdb-lists-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for TheSportsDB API — Lists. One tool per consumed operation, routed inline through this capability's
+      consumes block.
+    tools:
+    - name: list-all-leagues
+      description: List All Leagues
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: thesportsdb-lists.listallleagues
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: list-all-sports
+      description: List All Sports
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: thesportsdb-lists.listallsports
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: list-all-teams
+      description: List All Teams
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: thesportsdb-lists.listallteams
+      with:
+        l: tools.l
+        s: tools.s
+        c: tools.c
+      outputParameters:
+      - type: object
+        mapping: $.
