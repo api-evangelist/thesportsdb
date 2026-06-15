@@ -1,0 +1,405 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "TheSportsDB API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Search",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Search Teams",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.thesportsdb.com/api/v1/json/3/searchteams.php",
+            "params": [
+              {
+                "name": "t",
+                "value": "",
+                "type": "query",
+                "description": "Team name to search (e.g., Arsenal, Manchester United, Lakers). Free tier limited to \"Arsenal\" only."
+              },
+              {
+                "name": "sname",
+                "value": "",
+                "type": "query",
+                "description": "Short name or abbreviation (e.g., ARS, NYK, LAL)."
+              }
+            ]
+          },
+          "docs": "Search for sports teams by name or short name (abbreviation). Returns team metadata including badge, logo, stadium, and social links."
+        },
+        {
+          "info": {
+            "name": "Search Players",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.thesportsdb.com/api/v1/json/3/searchplayers.php",
+            "params": [
+              {
+                "name": "t",
+                "value": "",
+                "type": "query",
+                "description": "Team name to search players within."
+              },
+              {
+                "name": "p",
+                "value": "",
+                "type": "query",
+                "description": "Player name to search (e.g., \"Danny_Welbeck\")."
+              }
+            ]
+          },
+          "docs": "Search for sports players by name or associated team."
+        },
+        {
+          "info": {
+            "name": "Search Events",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.thesportsdb.com/api/v1/json/3/searchevents.php",
+            "params": [
+              {
+                "name": "e",
+                "value": "",
+                "type": "query",
+                "description": "Event name (e.g., \"Arsenal_vs_Chelsea\")."
+              },
+              {
+                "name": "s",
+                "value": "",
+                "type": "query",
+                "description": "Season (e.g., 2026-2027)."
+              }
+            ]
+          },
+          "docs": "Search for sports events by team names or season. Free tier returns a limited number of results."
+        },
+        {
+          "info": {
+            "name": "Search Venues",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.thesportsdb.com/api/v1/json/3/searchvenues.php",
+            "params": [
+              {
+                "name": "t",
+                "value": "",
+                "type": "query",
+                "description": "Venue name to search (e.g., Wembley, Anfield)."
+              }
+            ]
+          },
+          "docs": "Search for sports venues and stadiums by name."
+        },
+        {
+          "info": {
+            "name": "Search All Leagues",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.thesportsdb.com/api/v1/json/3/search_all_leagues.php",
+            "params": [
+              {
+                "name": "c",
+                "value": "",
+                "type": "query",
+                "description": "Country name filter."
+              },
+              {
+                "name": "s",
+                "value": "",
+                "type": "query",
+                "description": "Sport name filter."
+              }
+            ]
+          },
+          "docs": "Search leagues by country and sport type."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Lists",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List All Leagues",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.thesportsdb.com/api/v1/json/3/all_leagues.php"
+          },
+          "docs": "Returns a list of all sports leagues in the database."
+        },
+        {
+          "info": {
+            "name": "List All Sports",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.thesportsdb.com/api/v1/json/3/all_sports.php"
+          },
+          "docs": "Returns a list of all sports categories in the database."
+        },
+        {
+          "info": {
+            "name": "List All Teams",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.thesportsdb.com/api/v1/json/3/search_all_teams.php",
+            "params": [
+              {
+                "name": "l",
+                "value": "",
+                "type": "query",
+                "description": "League name (e.g., \"English Premier League\")."
+              },
+              {
+                "name": "s",
+                "value": "",
+                "type": "query",
+                "description": "Sport name (e.g., \"Soccer\")."
+              },
+              {
+                "name": "c",
+                "value": "",
+                "type": "query",
+                "description": "Country name (e.g., \"England\")."
+              }
+            ]
+          },
+          "docs": "Returns all teams within a specific league. Use the league name or league ID to filter."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Lookup",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Lookup League",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.thesportsdb.com/api/v1/json/3/lookupleague.php",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "query",
+                "description": "League ID."
+              }
+            ]
+          },
+          "docs": "Look up detailed information for a specific league by ID."
+        },
+        {
+          "info": {
+            "name": "Lookup Team",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.thesportsdb.com/api/v1/json/3/lookupteam.php",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "query",
+                "description": "Team ID."
+              }
+            ]
+          },
+          "docs": "Look up detailed information for a specific team by ID."
+        },
+        {
+          "info": {
+            "name": "Lookup Player",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.thesportsdb.com/api/v1/json/3/lookupplayer.php",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "query",
+                "description": "Player ID."
+              }
+            ]
+          },
+          "docs": "Look up detailed information for a specific player by ID."
+        },
+        {
+          "info": {
+            "name": "Lookup Event",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.thesportsdb.com/api/v1/json/3/lookupevent.php",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "query",
+                "description": "Event ID."
+              }
+            ]
+          },
+          "docs": "Look up detailed information for a specific sports event by ID."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Events",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Next Team Events",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.thesportsdb.com/api/v1/json/3/eventsnext.php",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "query",
+                "description": "Team ID."
+              }
+            ]
+          },
+          "docs": "Returns the next 5 upcoming events for a specific team."
+        },
+        {
+          "info": {
+            "name": "Get Last Team Events",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.thesportsdb.com/api/v1/json/3/eventslast.php",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "query",
+                "description": "Team ID."
+              }
+            ]
+          },
+          "docs": "Returns the last 5 previous events for a specific team."
+        },
+        {
+          "info": {
+            "name": "Get Season Events",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.thesportsdb.com/api/v1/json/3/eventsseason.php",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "query",
+                "description": "League ID."
+              },
+              {
+                "name": "s",
+                "value": "",
+                "type": "query",
+                "description": "Season year (e.g., 2026-2027)."
+              }
+            ]
+          },
+          "docs": "Returns all events for a league in a specific season."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Seasons",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Lookup Table",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.thesportsdb.com/api/v1/json/3/lookuptable.php",
+            "params": [
+              {
+                "name": "l",
+                "value": "",
+                "type": "query",
+                "description": "League ID."
+              },
+              {
+                "name": "s",
+                "value": "",
+                "type": "query",
+                "description": "Season (e.g., 2026-2027)."
+              }
+            ]
+          },
+          "docs": "Returns the season standings table for a specific league."
+        },
+        {
+          "info": {
+            "name": "List All Seasons",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.thesportsdb.com/api/v1/json/3/search_all_seasons.php",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "query",
+                "description": "League ID."
+              }
+            ]
+          },
+          "docs": "Returns all seasons available for a specific league."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
