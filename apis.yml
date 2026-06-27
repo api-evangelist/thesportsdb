@@ -60,7 +60,7 @@ common:
     url: https://www.thesportsdb.com/
   - type: Documentation
     url: https://www.thesportsdb.com/documentation
-  - type: SignUp
+  - type: Signup
     url: https://www.thesportsdb.com/register
   - type: Pricing
     url: https://www.thesportsdb.com/patreon
