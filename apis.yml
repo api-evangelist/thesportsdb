@@ -54,6 +54,8 @@ apis:
       - url: vocabulary/thesportsdb-vocabulary.yml
         type: Vocabulary
 common:
+  - type: DomainSecurity
+    url: security/thesportsdb-domain-security.yml
   - type: LinkedIn
     url: https://www.linkedin.com/company/thesportsapi
   - type: Website
