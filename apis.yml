@@ -54,6 +54,8 @@ apis:
       - url: vocabulary/thesportsdb-vocabulary.yml
         type: Vocabulary
 common:
+  - type: AgenticAccess
+    url: agentic-access/thesportsdb-agentic-access.yml
   - type: DomainSecurity
     url: security/thesportsdb-domain-security.yml
   - type: LinkedIn
