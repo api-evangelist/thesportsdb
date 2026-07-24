@@ -1,0 +1,389 @@
+openapi: 3.1.0
+info:
+  title: TheSportsDB Events Search API
+  description: An open, crowd-sourced sports database of artwork and metadata with a free sports API in JSON format. TheSportsDB provides data on sports leagues, teams, players, events, venues, and season standings across a wide range of sports worldwide. The v1 API is freely available; the v2 API requires a premium subscription.
+  version: 1.0.0
+  contact:
+    name: TheSportsDB
+    url: https://www.thesportsdb.com/
+  license:
+    name: Attribution Required
+    url: https://www.thesportsdb.com/documentation
+servers:
+- url: https://www.thesportsdb.com/api/v1/json/3
+  description: TheSportsDB API v1 (free key = 3)
+tags:
+- name: Search
+  description: Search for teams, players, events, and venues.
+paths:
+  /searchteams.php:
+    get:
+      operationId: searchTeams
+      summary: Search Teams
+      description: Search for sports teams by name or short name (abbreviation). Returns team metadata including badge, logo, stadium, and social links.
+      tags:
+      - Search
+      parameters:
+      - name: t
+        in: query
+        required: false
+        schema:
+          type: string
+        description: Team name to search (e.g., Arsenal, Manchester United, Lakers). Free tier limited to "Arsenal" only.
+      - name: sname
+        in: query
+        required: false
+        schema:
+          type: string
+        description: Short name or abbreviation (e.g., ARS, NYK, LAL).
+      responses:
+        '200':
+          description: Team search results.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TeamsResponse'
+  /searchplayers.php:
+    get:
+      operationId: searchPlayers
+      summary: Search Players
+      description: Search for sports players by name or associated team.
+      tags:
+      - Search
+      parameters:
+      - name: t
+        in: query
+        required: false
+        schema:
+          type: string
+        description: Team name to search players within.
+      - name: p
+        in: query
+        required: false
+        schema:
+          type: string
+        description: Player name to search (e.g., "Danny_Welbeck").
+      responses:
+        '200':
+          description: Player search results.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PlayersResponse'
+  /searchevents.php:
+    get:
+      operationId: searchEvents
+      summary: Search Events
+      description: Search for sports events by team names or season. Free tier returns a limited number of results.
+      tags:
+      - Search
+      parameters:
+      - name: e
+        in: query
+        required: false
+        schema:
+          type: string
+        description: Event name (e.g., "Arsenal_vs_Chelsea").
+      - name: s
+        in: query
+        required: false
+        schema:
+          type: string
+        description: Season (e.g., 2026-2027).
+      responses:
+        '200':
+          description: Event search results.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EventsResponse'
+  /searchvenues.php:
+    get:
+      operationId: searchVenues
+      summary: Search Venues
+      description: Search for sports venues and stadiums by name.
+      tags:
+      - Search
+      parameters:
+      - name: t
+        in: query
+        required: true
+        schema:
+          type: string
+        description: Venue name to search (e.g., Wembley, Anfield).
+      responses:
+        '200':
+          description: Venue search results.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/VenuesResponse'
+  /search_all_leagues.php:
+    get:
+      operationId: searchAllLeagues
+      summary: Search All Leagues
+      description: Search leagues by country and sport type.
+      tags:
+      - Search
+      parameters:
+      - name: c
+        in: query
+        required: false
+        schema:
+          type: string
+        description: Country name filter.
+      - name: s
+        in: query
+        required: false
+        schema:
+          type: string
+        description: Sport name filter.
+      responses:
+        '200':
+          description: Matching leagues.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LeaguesResponse'
+components:
+  schemas:
+    PlayersResponse:
+      type: object
+      properties:
+        player:
+          type: array
+          nullable: true
+          items:
+            $ref: '#/components/schemas/Player'
+    VenuesResponse:
+      type: object
+      properties:
+        venues:
+          type: array
+          nullable: true
+          items:
+            $ref: '#/components/schemas/Venue'
+    EventsResponse:
+      type: object
+      properties:
+        events:
+          type: array
+          nullable: true
+          items:
+            $ref: '#/components/schemas/Event'
+    Team:
+      type: object
+      properties:
+        idTeam:
+          type: string
+          description: Unique team identifier.
+        strTeam:
+          type: string
+          description: Team name.
+        strTeamShort:
+          type: string
+          description: Short name or abbreviation.
+        strAlternate:
+          type: string
+          description: Alternative team name.
+        intFormedYear:
+          type: string
+          description: Year the team was formed.
+        strLeague:
+          type: string
+          description: Primary league name.
+        idLeague:
+          type: string
+          description: Primary league ID.
+        strStadium:
+          type: string
+          description: Home stadium name.
+        strStadiumLocation:
+          type: string
+          description: Stadium city/location.
+        intStadiumCapacity:
+          type: string
+          description: Stadium seating capacity.
+        strWebsite:
+          type: string
+          description: Team website URL.
+        strFacebook:
+          type: string
+          description: Facebook page URL.
+        strTwitter:
+          type: string
+          description: Twitter/X handle URL.
+        strInstagram:
+          type: string
+          description: Instagram URL.
+        strDescriptionEN:
+          type: string
+          description: Team description in English.
+        strTeamBadge:
+          type: string
+          description: URL to the team badge/crest image.
+        strTeamJersey:
+          type: string
+          description: URL to the team jersey image.
+        strTeamFanart1:
+          type: string
+          description: URL to fan art image 1.
+        strCountry:
+          type: string
+          description: Country where the team is based.
+        strSport:
+          type: string
+          description: Sport type.
+    Player:
+      type: object
+      properties:
+        idPlayer:
+          type: string
+          description: Unique player identifier.
+        strPlayer:
+          type: string
+          description: Player full name.
+        strTeam:
+          type: string
+          description: Current team name.
+        strSport:
+          type: string
+          description: Sport type.
+        dateBorn:
+          type: string
+          format: date
+          description: Date of birth.
+        strNationality:
+          type: string
+          description: Player nationality.
+        strPosition:
+          type: string
+          description: Playing position.
+        strDescriptionEN:
+          type: string
+          description: Player biography in English.
+        strThumb:
+          type: string
+          description: URL to player thumbnail image.
+        strCutout:
+          type: string
+          description: URL to player cutout image.
+    TeamsResponse:
+      type: object
+      properties:
+        teams:
+          type: array
+          nullable: true
+          items:
+            $ref: '#/components/schemas/Team'
+    Venue:
+      type: object
+      properties:
+        idVenue:
+          type: string
+        strVenue:
+          type: string
+        strSport:
+          type: string
+        strLocation:
+          type: string
+        intCapacity:
+          type: string
+        strDescriptionEN:
+          type: string
+        strThumb:
+          type: string
+    League:
+      type: object
+      properties:
+        idLeague:
+          type: string
+          description: Unique league identifier.
+        strLeague:
+          type: string
+          description: League name.
+        strSport:
+          type: string
+          description: Sport type.
+        strLeagueAlternate:
+          type: string
+          description: Alternative name.
+        intFormedYear:
+          type: string
+          description: Year the league was formed.
+        strCountry:
+          type: string
+          description: Country the league is based in.
+        strWebsite:
+          type: string
+          description: League website URL.
+        strDescriptionEN:
+          type: string
+          description: League description in English.
+        strBadge:
+          type: string
+          description: URL to league badge/logo image.
+        strLogo:
+          type: string
+          description: URL to league logo.
+    Event:
+      type: object
+      properties:
+        idEvent:
+          type: string
+          description: Unique event identifier.
+        strEvent:
+          type: string
+          description: Event name (e.g., "Arsenal vs Chelsea").
+        strLeague:
+          type: string
+          description: League name.
+        idLeague:
+          type: string
+          description: League identifier.
+        strSeason:
+          type: string
+          description: Season (e.g., 2026-2027).
+        strHomeTeam:
+          type: string
+          description: Home team name.
+        strAwayTeam:
+          type: string
+          description: Away team name.
+        intHomeScore:
+          type: string
+          nullable: true
+          description: Home team score.
+        intAwayScore:
+          type: string
+          nullable: true
+          description: Away team score.
+        dateEvent:
+          type: string
+          format: date
+          description: Event date.
+        strTime:
+          type: string
+          description: Event time (local).
+        strVenue:
+          type: string
+          description: Venue name.
+        strStatus:
+          type: string
+          description: Event status (Match Finished, Not Started, etc.).
+        strThumb:
+          type: string
+          description: URL to event banner/thumb image.
+    LeaguesResponse:
+      type: object
+      properties:
+        leagues:
+          type: array
+          nullable: true
+          items:
+            $ref: '#/components/schemas/League'
+        countries:
+          type: array
+          nullable: true
+          items:
+            $ref: '#/components/schemas/League'

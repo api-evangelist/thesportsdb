@@ -1,0 +1,166 @@
+openapi: 3.1.0
+info:
+  title: TheSportsDB Events API
+  description: An open, crowd-sourced sports database of artwork and metadata with a free sports API in JSON format. TheSportsDB provides data on sports leagues, teams, players, events, venues, and season standings across a wide range of sports worldwide. The v1 API is freely available; the v2 API requires a premium subscription.
+  version: 1.0.0
+  contact:
+    name: TheSportsDB
+    url: https://www.thesportsdb.com/
+  license:
+    name: Attribution Required
+    url: https://www.thesportsdb.com/documentation
+servers:
+- url: https://www.thesportsdb.com/api/v1/json/3
+  description: TheSportsDB API v1 (free key = 3)
+tags:
+- name: Events
+  description: Sports event scheduling and results.
+paths:
+  /lookupevent.php:
+    get:
+      operationId: lookupEvent
+      summary: Lookup Event
+      description: Look up detailed information for a specific sports event by ID.
+      tags:
+      - Events
+      parameters:
+      - name: id
+        in: query
+        required: true
+        schema:
+          type: integer
+        description: Event ID.
+      responses:
+        '200':
+          description: Event details.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EventsResponse'
+  /eventsnext.php:
+    get:
+      operationId: getNextTeamEvents
+      summary: Get Next Team Events
+      description: Returns the next 5 upcoming events for a specific team.
+      tags:
+      - Events
+      parameters:
+      - name: id
+        in: query
+        required: true
+        schema:
+          type: integer
+        description: Team ID.
+      responses:
+        '200':
+          description: Next events for the team.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EventsResponse'
+  /eventslast.php:
+    get:
+      operationId: getLastTeamEvents
+      summary: Get Last Team Events
+      description: Returns the last 5 previous events for a specific team.
+      tags:
+      - Events
+      parameters:
+      - name: id
+        in: query
+        required: true
+        schema:
+          type: integer
+        description: Team ID.
+      responses:
+        '200':
+          description: Last events for the team.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EventsResponse'
+  /eventsseason.php:
+    get:
+      operationId: getSeasonEvents
+      summary: Get Season Events
+      description: Returns all events for a league in a specific season.
+      tags:
+      - Events
+      parameters:
+      - name: id
+        in: query
+        required: true
+        schema:
+          type: integer
+        description: League ID.
+      - name: s
+        in: query
+        required: false
+        schema:
+          type: string
+        description: Season year (e.g., 2026-2027).
+      responses:
+        '200':
+          description: Season events list.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EventsResponse'
+components:
+  schemas:
+    EventsResponse:
+      type: object
+      properties:
+        events:
+          type: array
+          nullable: true
+          items:
+            $ref: '#/components/schemas/Event'
+    Event:
+      type: object
+      properties:
+        idEvent:
+          type: string
+          description: Unique event identifier.
+        strEvent:
+          type: string
+          description: Event name (e.g., "Arsenal vs Chelsea").
+        strLeague:
+          type: string
+          description: League name.
+        idLeague:
+          type: string
+          description: League identifier.
+        strSeason:
+          type: string
+          description: Season (e.g., 2026-2027).
+        strHomeTeam:
+          type: string
+          description: Home team name.
+        strAwayTeam:
+          type: string
+          description: Away team name.
+        intHomeScore:
+          type: string
+          nullable: true
+          description: Home team score.
+        intAwayScore:
+          type: string
+          nullable: true
+          description: Away team score.
+        dateEvent:
+          type: string
+          format: date
+          description: Event date.
+        strTime:
+          type: string
+          description: Event time (local).
+        strVenue:
+          type: string
+          description: Venue name.
+        strStatus:
+          type: string
+          description: Event status (Match Finished, Not Started, etc.).
+        strThumb:
+          type: string
+          description: URL to event banner/thumb image.

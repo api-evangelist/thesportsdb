@@ -1,0 +1,214 @@
+openapi: 3.1.0
+info:
+  title: TheSportsDB Events Lists API
+  description: An open, crowd-sourced sports database of artwork and metadata with a free sports API in JSON format. TheSportsDB provides data on sports leagues, teams, players, events, venues, and season standings across a wide range of sports worldwide. The v1 API is freely available; the v2 API requires a premium subscription.
+  version: 1.0.0
+  contact:
+    name: TheSportsDB
+    url: https://www.thesportsdb.com/
+  license:
+    name: Attribution Required
+    url: https://www.thesportsdb.com/documentation
+servers:
+- url: https://www.thesportsdb.com/api/v1/json/3
+  description: TheSportsDB API v1 (free key = 3)
+tags:
+- name: Lists
+  description: List leagues, teams, players, and events.
+paths:
+  /all_leagues.php:
+    get:
+      operationId: listAllLeagues
+      summary: List All Leagues
+      description: Returns a list of all sports leagues in the database.
+      tags:
+      - Lists
+      responses:
+        '200':
+          description: List of all leagues.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LeaguesResponse'
+  /all_sports.php:
+    get:
+      operationId: listAllSports
+      summary: List All Sports
+      description: Returns a list of all sports categories in the database.
+      tags:
+      - Lists
+      responses:
+        '200':
+          description: List of all sports.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SportsResponse'
+  /search_all_teams.php:
+    get:
+      operationId: listAllTeams
+      summary: List All Teams
+      description: Returns all teams within a specific league. Use the league name or league ID to filter.
+      tags:
+      - Lists
+      parameters:
+      - name: l
+        in: query
+        required: false
+        schema:
+          type: string
+        description: League name (e.g., "English Premier League").
+      - name: s
+        in: query
+        required: false
+        schema:
+          type: string
+        description: Sport name (e.g., "Soccer").
+      - name: c
+        in: query
+        required: false
+        schema:
+          type: string
+        description: Country name (e.g., "England").
+      responses:
+        '200':
+          description: Teams in the league.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TeamsResponse'
+components:
+  schemas:
+    SportsResponse:
+      type: object
+      properties:
+        sports:
+          type: array
+          items:
+            $ref: '#/components/schemas/Sport'
+    Team:
+      type: object
+      properties:
+        idTeam:
+          type: string
+          description: Unique team identifier.
+        strTeam:
+          type: string
+          description: Team name.
+        strTeamShort:
+          type: string
+          description: Short name or abbreviation.
+        strAlternate:
+          type: string
+          description: Alternative team name.
+        intFormedYear:
+          type: string
+          description: Year the team was formed.
+        strLeague:
+          type: string
+          description: Primary league name.
+        idLeague:
+          type: string
+          description: Primary league ID.
+        strStadium:
+          type: string
+          description: Home stadium name.
+        strStadiumLocation:
+          type: string
+          description: Stadium city/location.
+        intStadiumCapacity:
+          type: string
+          description: Stadium seating capacity.
+        strWebsite:
+          type: string
+          description: Team website URL.
+        strFacebook:
+          type: string
+          description: Facebook page URL.
+        strTwitter:
+          type: string
+          description: Twitter/X handle URL.
+        strInstagram:
+          type: string
+          description: Instagram URL.
+        strDescriptionEN:
+          type: string
+          description: Team description in English.
+        strTeamBadge:
+          type: string
+          description: URL to the team badge/crest image.
+        strTeamJersey:
+          type: string
+          description: URL to the team jersey image.
+        strTeamFanart1:
+          type: string
+          description: URL to fan art image 1.
+        strCountry:
+          type: string
+          description: Country where the team is based.
+        strSport:
+          type: string
+          description: Sport type.
+    TeamsResponse:
+      type: object
+      properties:
+        teams:
+          type: array
+          nullable: true
+          items:
+            $ref: '#/components/schemas/Team'
+    Sport:
+      type: object
+      properties:
+        idSport:
+          type: string
+        strSport:
+          type: string
+        strSportThumb:
+          type: string
+    League:
+      type: object
+      properties:
+        idLeague:
+          type: string
+          description: Unique league identifier.
+        strLeague:
+          type: string
+          description: League name.
+        strSport:
+          type: string
+          description: Sport type.
+        strLeagueAlternate:
+          type: string
+          description: Alternative name.
+        intFormedYear:
+          type: string
+          description: Year the league was formed.
+        strCountry:
+          type: string
+          description: Country the league is based in.
+        strWebsite:
+          type: string
+          description: League website URL.
+        strDescriptionEN:
+          type: string
+          description: League description in English.
+        strBadge:
+          type: string
+          description: URL to league badge/logo image.
+        strLogo:
+          type: string
+          description: URL to league logo.
+    LeaguesResponse:
+      type: object
+      properties:
+        leagues:
+          type: array
+          nullable: true
+          items:
+            $ref: '#/components/schemas/League'
+        countries:
+          type: array
+          nullable: true
+          items:
+            $ref: '#/components/schemas/League'

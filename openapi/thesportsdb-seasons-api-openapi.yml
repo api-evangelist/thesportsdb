@@ -1,0 +1,208 @@
+openapi: 3.1.0
+info:
+  title: TheSportsDB Events Seasons API
+  description: An open, crowd-sourced sports database of artwork and metadata with a free sports API in JSON format. TheSportsDB provides data on sports leagues, teams, players, events, venues, and season standings across a wide range of sports worldwide. The v1 API is freely available; the v2 API requires a premium subscription.
+  version: 1.0.0
+  contact:
+    name: TheSportsDB
+    url: https://www.thesportsdb.com/
+  license:
+    name: Attribution Required
+    url: https://www.thesportsdb.com/documentation
+servers:
+- url: https://www.thesportsdb.com/api/v1/json/3
+  description: TheSportsDB API v1 (free key = 3)
+tags:
+- name: Seasons
+  description: Season standings and results.
+paths:
+  /eventsseason.php:
+    get:
+      operationId: getSeasonEvents
+      summary: Get Season Events
+      description: Returns all events for a league in a specific season.
+      tags:
+      - Seasons
+      parameters:
+      - name: id
+        in: query
+        required: true
+        schema:
+          type: integer
+        description: League ID.
+      - name: s
+        in: query
+        required: false
+        schema:
+          type: string
+        description: Season year (e.g., 2026-2027).
+      responses:
+        '200':
+          description: Season events list.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EventsResponse'
+  /lookuptable.php:
+    get:
+      operationId: lookupTable
+      summary: Lookup Table
+      description: Returns the season standings table for a specific league.
+      tags:
+      - Seasons
+      parameters:
+      - name: l
+        in: query
+        required: true
+        schema:
+          type: integer
+        description: League ID.
+      - name: s
+        in: query
+        required: false
+        schema:
+          type: string
+        description: Season (e.g., 2026-2027).
+      responses:
+        '200':
+          description: League standings table.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TableResponse'
+  /search_all_seasons.php:
+    get:
+      operationId: listAllSeasons
+      summary: List All Seasons
+      description: Returns all seasons available for a specific league.
+      tags:
+      - Seasons
+      parameters:
+      - name: id
+        in: query
+        required: true
+        schema:
+          type: integer
+        description: League ID.
+      responses:
+        '200':
+          description: Seasons list.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SeasonsResponse'
+components:
+  schemas:
+    TableRow:
+      type: object
+      properties:
+        name:
+          type: string
+          description: Team name.
+        teamid:
+          type: string
+          description: Team ID.
+        played:
+          type: string
+          description: Games played.
+        win:
+          type: string
+          description: Wins.
+        loss:
+          type: string
+          description: Losses.
+        draw:
+          type: string
+          description: Draws.
+        goalsfor:
+          type: string
+          description: Goals scored.
+        goalsagainst:
+          type: string
+          description: Goals conceded.
+        goalsdifference:
+          type: string
+          description: Goal difference.
+        total:
+          type: string
+          description: Total points.
+        badge:
+          type: string
+          description: URL to team badge.
+    EventsResponse:
+      type: object
+      properties:
+        events:
+          type: array
+          nullable: true
+          items:
+            $ref: '#/components/schemas/Event'
+    TableResponse:
+      type: object
+      properties:
+        table:
+          type: array
+          nullable: true
+          items:
+            $ref: '#/components/schemas/TableRow'
+    Season:
+      type: object
+      properties:
+        strSeason:
+          type: string
+          description: Season identifier (e.g., 2026-2027).
+    SeasonsResponse:
+      type: object
+      properties:
+        seasons:
+          type: array
+          items:
+            $ref: '#/components/schemas/Season'
+    Event:
+      type: object
+      properties:
+        idEvent:
+          type: string
+          description: Unique event identifier.
+        strEvent:
+          type: string
+          description: Event name (e.g., "Arsenal vs Chelsea").
+        strLeague:
+          type: string
+          description: League name.
+        idLeague:
+          type: string
+          description: League identifier.
+        strSeason:
+          type: string
+          description: Season (e.g., 2026-2027).
+        strHomeTeam:
+          type: string
+          description: Home team name.
+        strAwayTeam:
+          type: string
+          description: Away team name.
+        intHomeScore:
+          type: string
+          nullable: true
+          description: Home team score.
+        intAwayScore:
+          type: string
+          nullable: true
+          description: Away team score.
+        dateEvent:
+          type: string
+          format: date
+          description: Event date.
+        strTime:
+          type: string
+          description: Event time (local).
+        strVenue:
+          type: string
+          description: Venue name.
+        strStatus:
+          type: string
+          description: Event status (Match Finished, Not Started, etc.).
+        strThumb:
+          type: string
+          description: URL to event banner/thumb image.
