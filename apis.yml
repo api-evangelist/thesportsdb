@@ -5,9 +5,21 @@ description: >-
   provides data on sports leagues, teams, players, events, venues, and season standings across a wide range of sports
   worldwide including soccer, basketball, baseball, American football, hockey, tennis, and more.
 kind: contract
+accessModel:
+  pricing: freemium
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Freemium
+  confidence: medium
+  source:
+  - plans
+  generated: '2026-07-22'
+  method: derived
 position: Consumer
 access: 3rd-Party
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/thesportsdb.png
 tags:
   - Sports
   - Database
@@ -21,38 +33,126 @@ modified: '2026-05-19'
 url: https://raw.githubusercontent.com/api-evangelist/thesportsdb/refs/heads/main/apis.yml
 specificationVersion: '0.19'
 apis:
-  - aid: thesportsdb:thesportsdb
-    name: TheSportsDB API
-    description: >-
-      An open, crowd-sourced sports database of artwork and metadata with a free sports API in JSON format. Provides
-      data on leagues, teams, players, events, venues, and season standings across hundreds of sports worldwide.
-    humanURL: https://www.thesportsdb.com/
-    baseURL: https://www.thesportsdb.com/api/v1/json/3
-    tags:
-      - Sports
-      - Database
-      - Free
-      - Teams
-      - Players
-      - Events
-      - Leagues
-    properties:
-      - type: Documentation
-        url: https://www.thesportsdb.com/documentation
-      - type: Website
-        url: https://www.thesportsdb.com/
-      - url: openapi/thesportsdb-openapi.yml
-        type: OpenAPI
-      - url: json-schema/thesportsdb-team-schema.json
-        type: JSONSchema
-      - url: json-ld/thesportsdb-context.jsonld
-        type: JSONLD
-      - url: json-structure/thesportsdb-structure.json
-        type: JSONStructure
-      - url: rules/thesportsdb-rules.yml
-        type: SpectralRules
-      - url: vocabulary/thesportsdb-vocabulary.yml
-        type: Vocabulary
+- aid: thesportsdb:thesportsdb-events-api
+  name: TheSportsDB Events API
+  description: Sports event scheduling and results.
+  humanURL: https://www.thesportsdb.com/
+  baseURL: https://www.thesportsdb.com/api/v1/json/3
+  tags:
+  - Events
+  properties:
+  - type: OpenAPI
+    url: openapi/thesportsdb-events-api-openapi.yml
+  - type: Documentation
+    url: https://www.thesportsdb.com/documentation
+  - type: Website
+    url: https://www.thesportsdb.com/
+  - type: JSONSchema
+    url: json-schema/thesportsdb-team-schema.json
+  - type: JSONLD
+    url: json-ld/thesportsdb-context.jsonld
+  - type: JSONStructure
+    url: json-structure/thesportsdb-structure.json
+  - type: SpectralRules
+    url: rules/thesportsdb-rules.yml
+  - type: Vocabulary
+    url: vocabulary/thesportsdb-vocabulary.yml
+- aid: thesportsdb:thesportsdb-lists-api
+  name: TheSportsDB Lists API
+  description: List leagues, teams, players, and events.
+  humanURL: https://www.thesportsdb.com/
+  baseURL: https://www.thesportsdb.com/api/v1/json/3
+  tags:
+  - Lists
+  properties:
+  - type: OpenAPI
+    url: openapi/thesportsdb-lists-api-openapi.yml
+  - type: Documentation
+    url: https://www.thesportsdb.com/documentation
+  - type: Website
+    url: https://www.thesportsdb.com/
+  - type: JSONSchema
+    url: json-schema/thesportsdb-team-schema.json
+  - type: JSONLD
+    url: json-ld/thesportsdb-context.jsonld
+  - type: JSONStructure
+    url: json-structure/thesportsdb-structure.json
+  - type: SpectralRules
+    url: rules/thesportsdb-rules.yml
+  - type: Vocabulary
+    url: vocabulary/thesportsdb-vocabulary.yml
+- aid: thesportsdb:thesportsdb-lookup-api
+  name: TheSportsDB Lookup API
+  description: Look up detailed data by ID.
+  humanURL: https://www.thesportsdb.com/
+  baseURL: https://www.thesportsdb.com/api/v1/json/3
+  tags:
+  - Lookup
+  properties:
+  - type: OpenAPI
+    url: openapi/thesportsdb-lookup-api-openapi.yml
+  - type: Documentation
+    url: https://www.thesportsdb.com/documentation
+  - type: Website
+    url: https://www.thesportsdb.com/
+  - type: JSONSchema
+    url: json-schema/thesportsdb-team-schema.json
+  - type: JSONLD
+    url: json-ld/thesportsdb-context.jsonld
+  - type: JSONStructure
+    url: json-structure/thesportsdb-structure.json
+  - type: SpectralRules
+    url: rules/thesportsdb-rules.yml
+  - type: Vocabulary
+    url: vocabulary/thesportsdb-vocabulary.yml
+- aid: thesportsdb:thesportsdb-search-api
+  name: TheSportsDB Search API
+  description: Search for teams, players, events, and venues.
+  humanURL: https://www.thesportsdb.com/
+  baseURL: https://www.thesportsdb.com/api/v1/json/3
+  tags:
+  - Search
+  properties:
+  - type: OpenAPI
+    url: openapi/thesportsdb-search-api-openapi.yml
+  - type: Documentation
+    url: https://www.thesportsdb.com/documentation
+  - type: Website
+    url: https://www.thesportsdb.com/
+  - type: JSONSchema
+    url: json-schema/thesportsdb-team-schema.json
+  - type: JSONLD
+    url: json-ld/thesportsdb-context.jsonld
+  - type: JSONStructure
+    url: json-structure/thesportsdb-structure.json
+  - type: SpectralRules
+    url: rules/thesportsdb-rules.yml
+  - type: Vocabulary
+    url: vocabulary/thesportsdb-vocabulary.yml
+- aid: thesportsdb:thesportsdb-seasons-api
+  name: TheSportsDB Seasons API
+  description: Season standings and results.
+  humanURL: https://www.thesportsdb.com/
+  baseURL: https://www.thesportsdb.com/api/v1/json/3
+  tags:
+  - Seasons
+  properties:
+  - type: OpenAPI
+    url: openapi/thesportsdb-seasons-api-openapi.yml
+  - type: Documentation
+    url: https://www.thesportsdb.com/documentation
+  - type: Website
+    url: https://www.thesportsdb.com/
+  - type: JSONSchema
+    url: json-schema/thesportsdb-team-schema.json
+  - type: JSONLD
+    url: json-ld/thesportsdb-context.jsonld
+  - type: JSONStructure
+    url: json-structure/thesportsdb-structure.json
+  - type: SpectralRules
+    url: rules/thesportsdb-rules.yml
+  - type: Vocabulary
+    url: vocabulary/thesportsdb-vocabulary.yml
 common:
   - type: AgenticAccess
     url: agentic-access/thesportsdb-agentic-access.yml
