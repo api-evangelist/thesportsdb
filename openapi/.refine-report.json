@@ -1,0 +1,22 @@
+{
+  "provider": "thesportsdb",
+  "sources": [
+    "thesportsdb-events-api-openapi.yml",
+    "thesportsdb-lists-api-openapi.yml",
+    "thesportsdb-lookup-api-openapi.yml",
+    "thesportsdb-search-api-openapi.yml",
+    "thesportsdb-seasons-api-openapi.yml"
+  ],
+  "outputs": [
+    "thesportsdb-events-api-openapi.yml",
+    "thesportsdb-lists-api-openapi.yml",
+    "thesportsdb-lookup-api-openapi.yml",
+    "thesportsdb-search-api-openapi.yml",
+    "thesportsdb-seasons-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
