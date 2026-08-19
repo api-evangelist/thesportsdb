@@ -1,0 +1,370 @@
+{
+  "item": [
+    {
+      "id": "8b9efe0e-cc46-4615-9cc0-c3fdd1f0048f",
+      "name": "Events",
+      "description": {
+        "content": "Sports event scheduling and results.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "196ce111-cfef-46c9-bc51-9191ac4b9f5f",
+          "name": "Lookup Event",
+          "request": {
+            "name": "Lookup Event",
+            "description": {
+              "content": "Look up detailed information for a specific sports event by ID.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "lookupevent.php"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "id",
+                  "value": "<integer>",
+                  "description": "(Required) Event ID."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "def9a310-2563-48ea-b2bb-f50e89994648",
+              "name": "Event details.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "lookupevent.php"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "id",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"events\": [\n    {\n      \"idEvent\": \"string\",\n      \"strEvent\": \"string\",\n      \"strLeague\": \"string\",\n      \"idLeague\": \"string\",\n      \"strSeason\": \"string\",\n      \"strHomeTeam\": \"string\",\n      \"strAwayTeam\": \"string\",\n      \"intHomeScore\": \"string\",\n      \"intAwayScore\": \"string\",\n      \"dateEvent\": \"2006-09-01\",\n      \"strTime\": \"string\",\n      \"strVenue\": \"string\",\n      \"strStatus\": \"string\",\n      \"strThumb\": \"string\"\n    },\n    {\n      \"idEvent\": \"string\",\n      \"strEvent\": \"string\",\n      \"strLeague\": \"string\",\n      \"idLeague\": \"string\",\n      \"strSeason\": \"string\",\n      \"strHomeTeam\": \"string\",\n      \"strAwayTeam\": \"string\",\n      \"intHomeScore\": \"string\",\n      \"intAwayScore\": \"string\",\n      \"dateEvent\": \"2008-12-08\",\n      \"strTime\": \"string\",\n      \"strVenue\": \"string\",\n      \"strStatus\": \"string\",\n      \"strThumb\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "cf6fdbc1-a13e-4c6b-ace4-ddc75407173e",
+          "name": "Get Next Team Events",
+          "request": {
+            "name": "Get Next Team Events",
+            "description": {
+              "content": "Returns the next 5 upcoming events for a specific team.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "eventsnext.php"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "id",
+                  "value": "<integer>",
+                  "description": "(Required) Team ID."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "092b124c-7681-43f1-907b-275e015c7f3c",
+              "name": "Next events for the team.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "eventsnext.php"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "id",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"events\": [\n    {\n      \"idEvent\": \"string\",\n      \"strEvent\": \"string\",\n      \"strLeague\": \"string\",\n      \"idLeague\": \"string\",\n      \"strSeason\": \"string\",\n      \"strHomeTeam\": \"string\",\n      \"strAwayTeam\": \"string\",\n      \"intHomeScore\": \"string\",\n      \"intAwayScore\": \"string\",\n      \"dateEvent\": \"2006-09-01\",\n      \"strTime\": \"string\",\n      \"strVenue\": \"string\",\n      \"strStatus\": \"string\",\n      \"strThumb\": \"string\"\n    },\n    {\n      \"idEvent\": \"string\",\n      \"strEvent\": \"string\",\n      \"strLeague\": \"string\",\n      \"idLeague\": \"string\",\n      \"strSeason\": \"string\",\n      \"strHomeTeam\": \"string\",\n      \"strAwayTeam\": \"string\",\n      \"intHomeScore\": \"string\",\n      \"intAwayScore\": \"string\",\n      \"dateEvent\": \"2008-12-08\",\n      \"strTime\": \"string\",\n      \"strVenue\": \"string\",\n      \"strStatus\": \"string\",\n      \"strThumb\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "55c3ab20-db41-461d-bc5f-447bc66af48b",
+          "name": "Get Last Team Events",
+          "request": {
+            "name": "Get Last Team Events",
+            "description": {
+              "content": "Returns the last 5 previous events for a specific team.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "eventslast.php"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "id",
+                  "value": "<integer>",
+                  "description": "(Required) Team ID."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "320505a3-3ffb-45ce-ba16-ac567a6fb470",
+              "name": "Last events for the team.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "eventslast.php"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "id",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"events\": [\n    {\n      \"idEvent\": \"string\",\n      \"strEvent\": \"string\",\n      \"strLeague\": \"string\",\n      \"idLeague\": \"string\",\n      \"strSeason\": \"string\",\n      \"strHomeTeam\": \"string\",\n      \"strAwayTeam\": \"string\",\n      \"intHomeScore\": \"string\",\n      \"intAwayScore\": \"string\",\n      \"dateEvent\": \"2006-09-01\",\n      \"strTime\": \"string\",\n      \"strVenue\": \"string\",\n      \"strStatus\": \"string\",\n      \"strThumb\": \"string\"\n    },\n    {\n      \"idEvent\": \"string\",\n      \"strEvent\": \"string\",\n      \"strLeague\": \"string\",\n      \"idLeague\": \"string\",\n      \"strSeason\": \"string\",\n      \"strHomeTeam\": \"string\",\n      \"strAwayTeam\": \"string\",\n      \"intHomeScore\": \"string\",\n      \"intAwayScore\": \"string\",\n      \"dateEvent\": \"2008-12-08\",\n      \"strTime\": \"string\",\n      \"strVenue\": \"string\",\n      \"strStatus\": \"string\",\n      \"strThumb\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d5da2d08-0b59-4298-8c7d-6aaa65adcf4c",
+          "name": "Get Season Events",
+          "request": {
+            "name": "Get Season Events",
+            "description": {
+              "content": "Returns all events for a league in a specific season.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "eventsseason.php"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "id",
+                  "value": "<integer>",
+                  "description": "(Required) League ID."
+                },
+                {
+                  "disabled": false,
+                  "key": "s",
+                  "value": "<string>",
+                  "description": "Season year (e.g., 2026-2027)."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "f59e063e-99f5-4f7c-8d25-5f4eb163207f",
+              "name": "Season events list.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "eventsseason.php"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "id",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "s",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"events\": [\n    {\n      \"idEvent\": \"string\",\n      \"strEvent\": \"string\",\n      \"strLeague\": \"string\",\n      \"idLeague\": \"string\",\n      \"strSeason\": \"string\",\n      \"strHomeTeam\": \"string\",\n      \"strAwayTeam\": \"string\",\n      \"intHomeScore\": \"string\",\n      \"intAwayScore\": \"string\",\n      \"dateEvent\": \"2006-09-01\",\n      \"strTime\": \"string\",\n      \"strVenue\": \"string\",\n      \"strStatus\": \"string\",\n      \"strThumb\": \"string\"\n    },\n    {\n      \"idEvent\": \"string\",\n      \"strEvent\": \"string\",\n      \"strLeague\": \"string\",\n      \"idLeague\": \"string\",\n      \"strSeason\": \"string\",\n      \"strHomeTeam\": \"string\",\n      \"strAwayTeam\": \"string\",\n      \"intHomeScore\": \"string\",\n      \"intAwayScore\": \"string\",\n      \"dateEvent\": \"2008-12-08\",\n      \"strTime\": \"string\",\n      \"strVenue\": \"string\",\n      \"strStatus\": \"string\",\n      \"strThumb\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://www.thesportsdb.com/api/v1/json/3",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "8682a16d-e226-4011-925d-676bb56c7ccf",
+    "name": "TheSportsDB Events API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "An open, crowd-sourced sports database of artwork and metadata with a free sports API in JSON format. TheSportsDB provides data on sports leagues, teams, players, events, venues, and season standings across a wide range of sports worldwide. The v1 API is freely available; the v2 API requires a premium subscription.\n\nContact Support:\n Name: TheSportsDB",
+      "type": "text/plain"
+    }
+  }
+}

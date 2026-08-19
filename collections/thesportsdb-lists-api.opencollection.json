@@ -1,0 +1,71 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "TheSportsDB Events Lists API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Lists",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List All Leagues",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.thesportsdb.com/api/v1/json/3/all_leagues.php"
+          },
+          "docs": "Returns a list of all sports leagues in the database."
+        },
+        {
+          "info": {
+            "name": "List All Sports",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.thesportsdb.com/api/v1/json/3/all_sports.php"
+          },
+          "docs": "Returns a list of all sports categories in the database."
+        },
+        {
+          "info": {
+            "name": "List All Teams",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.thesportsdb.com/api/v1/json/3/search_all_teams.php",
+            "params": [
+              {
+                "name": "l",
+                "value": "",
+                "type": "query",
+                "description": "League name (e.g., \"English Premier League\")."
+              },
+              {
+                "name": "s",
+                "value": "",
+                "type": "query",
+                "description": "Sport name (e.g., \"Soccer\")."
+              },
+              {
+                "name": "c",
+                "value": "",
+                "type": "query",
+                "description": "Country name (e.g., \"England\")."
+              }
+            ]
+          },
+          "docs": "Returns all teams within a specific league. Use the league name or league ID to filter."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,119 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "TheSportsDB Events Lookup API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Lookup",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Lookup League",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.thesportsdb.com/api/v1/json/3/lookupleague.php",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "query",
+                "description": "League ID."
+              }
+            ]
+          },
+          "docs": "Look up detailed information for a specific league by ID."
+        },
+        {
+          "info": {
+            "name": "Lookup Team",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.thesportsdb.com/api/v1/json/3/lookupteam.php",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "query",
+                "description": "Team ID."
+              }
+            ]
+          },
+          "docs": "Look up detailed information for a specific team by ID."
+        },
+        {
+          "info": {
+            "name": "Lookup Player",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.thesportsdb.com/api/v1/json/3/lookupplayer.php",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "query",
+                "description": "Player ID."
+              }
+            ]
+          },
+          "docs": "Look up detailed information for a specific player by ID."
+        },
+        {
+          "info": {
+            "name": "Lookup Event",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.thesportsdb.com/api/v1/json/3/lookupevent.php",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "query",
+                "description": "Event ID."
+              }
+            ]
+          },
+          "docs": "Look up detailed information for a specific sports event by ID."
+        },
+        {
+          "info": {
+            "name": "Lookup Table",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.thesportsdb.com/api/v1/json/3/lookuptable.php",
+            "params": [
+              {
+                "name": "l",
+                "value": "",
+                "type": "query",
+                "description": "League ID."
+              },
+              {
+                "name": "s",
+                "value": "",
+                "type": "query",
+                "description": "Season (e.g., 2026-2027)."
+              }
+            ]
+          },
+          "docs": "Returns the season standings table for a specific league."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

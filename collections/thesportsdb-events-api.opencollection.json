@@ -1,0 +1,100 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "TheSportsDB Events API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Events",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Lookup Event",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.thesportsdb.com/api/v1/json/3/lookupevent.php",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "query",
+                "description": "Event ID."
+              }
+            ]
+          },
+          "docs": "Look up detailed information for a specific sports event by ID."
+        },
+        {
+          "info": {
+            "name": "Get Next Team Events",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.thesportsdb.com/api/v1/json/3/eventsnext.php",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "query",
+                "description": "Team ID."
+              }
+            ]
+          },
+          "docs": "Returns the next 5 upcoming events for a specific team."
+        },
+        {
+          "info": {
+            "name": "Get Last Team Events",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.thesportsdb.com/api/v1/json/3/eventslast.php",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "query",
+                "description": "Team ID."
+              }
+            ]
+          },
+          "docs": "Returns the last 5 previous events for a specific team."
+        },
+        {
+          "info": {
+            "name": "Get Season Events",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.thesportsdb.com/api/v1/json/3/eventsseason.php",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "query",
+                "description": "League ID."
+              },
+              {
+                "name": "s",
+                "value": "",
+                "type": "query",
+                "description": "Season year (e.g., 2026-2027)."
+              }
+            ]
+          },
+          "docs": "Returns all events for a league in a specific season."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

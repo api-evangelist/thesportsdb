@@ -1,0 +1,87 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "TheSportsDB Events Seasons API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Seasons",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Season Events",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.thesportsdb.com/api/v1/json/3/eventsseason.php",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "query",
+                "description": "League ID."
+              },
+              {
+                "name": "s",
+                "value": "",
+                "type": "query",
+                "description": "Season year (e.g., 2026-2027)."
+              }
+            ]
+          },
+          "docs": "Returns all events for a league in a specific season."
+        },
+        {
+          "info": {
+            "name": "Lookup Table",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.thesportsdb.com/api/v1/json/3/lookuptable.php",
+            "params": [
+              {
+                "name": "l",
+                "value": "",
+                "type": "query",
+                "description": "League ID."
+              },
+              {
+                "name": "s",
+                "value": "",
+                "type": "query",
+                "description": "Season (e.g., 2026-2027)."
+              }
+            ]
+          },
+          "docs": "Returns the season standings table for a specific league."
+        },
+        {
+          "info": {
+            "name": "List All Seasons",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.thesportsdb.com/api/v1/json/3/search_all_seasons.php",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "query",
+                "description": "League ID."
+              }
+            ]
+          },
+          "docs": "Returns all seasons available for a specific league."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

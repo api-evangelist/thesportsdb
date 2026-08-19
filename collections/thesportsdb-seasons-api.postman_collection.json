@@ -1,0 +1,298 @@
+{
+  "item": [
+    {
+      "id": "751df088-514c-4acf-b62f-b7dfb6562ed8",
+      "name": "Seasons",
+      "description": {
+        "content": "Season standings and results.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "9b1f9350-54cb-4ae9-a873-184857c89d09",
+          "name": "Get Season Events",
+          "request": {
+            "name": "Get Season Events",
+            "description": {
+              "content": "Returns all events for a league in a specific season.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "eventsseason.php"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "id",
+                  "value": "<integer>",
+                  "description": "(Required) League ID."
+                },
+                {
+                  "disabled": false,
+                  "key": "s",
+                  "value": "<string>",
+                  "description": "Season year (e.g., 2026-2027)."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c1b1667b-b8de-4e24-9652-e94f715fadb4",
+              "name": "Season events list.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "eventsseason.php"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "id",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "s",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"events\": [\n    {\n      \"idEvent\": \"string\",\n      \"strEvent\": \"string\",\n      \"strLeague\": \"string\",\n      \"idLeague\": \"string\",\n      \"strSeason\": \"string\",\n      \"strHomeTeam\": \"string\",\n      \"strAwayTeam\": \"string\",\n      \"intHomeScore\": \"string\",\n      \"intAwayScore\": \"string\",\n      \"dateEvent\": \"2005-01-14\",\n      \"strTime\": \"string\",\n      \"strVenue\": \"string\",\n      \"strStatus\": \"string\",\n      \"strThumb\": \"string\"\n    },\n    {\n      \"idEvent\": \"string\",\n      \"strEvent\": \"string\",\n      \"strLeague\": \"string\",\n      \"idLeague\": \"string\",\n      \"strSeason\": \"string\",\n      \"strHomeTeam\": \"string\",\n      \"strAwayTeam\": \"string\",\n      \"intHomeScore\": \"string\",\n      \"intAwayScore\": \"string\",\n      \"dateEvent\": \"2004-11-11\",\n      \"strTime\": \"string\",\n      \"strVenue\": \"string\",\n      \"strStatus\": \"string\",\n      \"strThumb\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b48624d6-a592-44e0-b3fa-cfb168312679",
+          "name": "Lookup Table",
+          "request": {
+            "name": "Lookup Table",
+            "description": {
+              "content": "Returns the season standings table for a specific league.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "lookuptable.php"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "l",
+                  "value": "<integer>",
+                  "description": "(Required) League ID."
+                },
+                {
+                  "disabled": false,
+                  "key": "s",
+                  "value": "<string>",
+                  "description": "Season (e.g., 2026-2027)."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "82ef2b6f-cab6-4d86-917e-f9a805cef611",
+              "name": "League standings table.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "lookuptable.php"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "l",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "s",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"table\": [\n    {\n      \"name\": \"string\",\n      \"teamid\": \"string\",\n      \"played\": \"string\",\n      \"win\": \"string\",\n      \"loss\": \"string\",\n      \"draw\": \"string\",\n      \"goalsfor\": \"string\",\n      \"goalsagainst\": \"string\",\n      \"goalsdifference\": \"string\",\n      \"total\": \"string\",\n      \"badge\": \"string\"\n    },\n    {\n      \"name\": \"string\",\n      \"teamid\": \"string\",\n      \"played\": \"string\",\n      \"win\": \"string\",\n      \"loss\": \"string\",\n      \"draw\": \"string\",\n      \"goalsfor\": \"string\",\n      \"goalsagainst\": \"string\",\n      \"goalsdifference\": \"string\",\n      \"total\": \"string\",\n      \"badge\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "39dd8b2b-b063-4cf8-af7d-4f640dbec27e",
+          "name": "List All Seasons",
+          "request": {
+            "name": "List All Seasons",
+            "description": {
+              "content": "Returns all seasons available for a specific league.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "search_all_seasons.php"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "id",
+                  "value": "<integer>",
+                  "description": "(Required) League ID."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "4ecddc1f-1862-427c-8728-74e5ba3539c3",
+              "name": "Seasons list.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "search_all_seasons.php"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "id",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"seasons\": [\n    {\n      \"strSeason\": \"string\"\n    },\n    {\n      \"strSeason\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://www.thesportsdb.com/api/v1/json/3",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "2883f2f8-af9e-48c5-a44d-04e1f0f8d736",
+    "name": "TheSportsDB Events Seasons API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "An open, crowd-sourced sports database of artwork and metadata with a free sports API in JSON format. TheSportsDB provides data on sports leagues, teams, players, events, venues, and season standings across a wide range of sports worldwide. The v1 API is freely available; the v2 API requires a premium subscription.\n\nContact Support:\n Name: TheSportsDB",
+      "type": "text/plain"
+    }
+  }
+}

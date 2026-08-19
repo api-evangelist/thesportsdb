@@ -1,0 +1,452 @@
+{
+  "item": [
+    {
+      "id": "d66fe78d-b8eb-4c81-bd47-7264a9d9766d",
+      "name": "Lookup",
+      "description": {
+        "content": "Look up detailed data by ID.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "41be1a08-79a8-4b12-be06-fe719169cc0d",
+          "name": "Lookup League",
+          "request": {
+            "name": "Lookup League",
+            "description": {
+              "content": "Look up detailed information for a specific league by ID.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "lookupleague.php"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "id",
+                  "value": "<integer>",
+                  "description": "(Required) League ID."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "a4bcdf20-6426-4882-bd4a-3c2d86a0ad2a",
+              "name": "League details.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "lookupleague.php"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "id",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"leagues\": [\n    {\n      \"idLeague\": \"string\",\n      \"strLeague\": \"string\",\n      \"strSport\": \"string\",\n      \"strLeagueAlternate\": \"string\",\n      \"intFormedYear\": \"string\",\n      \"strCountry\": \"string\",\n      \"strWebsite\": \"string\",\n      \"strDescriptionEN\": \"string\",\n      \"strBadge\": \"string\",\n      \"strLogo\": \"string\"\n    },\n    {\n      \"idLeague\": \"string\",\n      \"strLeague\": \"string\",\n      \"strSport\": \"string\",\n      \"strLeagueAlternate\": \"string\",\n      \"intFormedYear\": \"string\",\n      \"strCountry\": \"string\",\n      \"strWebsite\": \"string\",\n      \"strDescriptionEN\": \"string\",\n      \"strBadge\": \"string\",\n      \"strLogo\": \"string\"\n    }\n  ],\n  \"countries\": [\n    {\n      \"idLeague\": \"string\",\n      \"strLeague\": \"string\",\n      \"strSport\": \"string\",\n      \"strLeagueAlternate\": \"string\",\n      \"intFormedYear\": \"string\",\n      \"strCountry\": \"string\",\n      \"strWebsite\": \"string\",\n      \"strDescriptionEN\": \"string\",\n      \"strBadge\": \"string\",\n      \"strLogo\": \"string\"\n    },\n    {\n      \"idLeague\": \"string\",\n      \"strLeague\": \"string\",\n      \"strSport\": \"string\",\n      \"strLeagueAlternate\": \"string\",\n      \"intFormedYear\": \"string\",\n      \"strCountry\": \"string\",\n      \"strWebsite\": \"string\",\n      \"strDescriptionEN\": \"string\",\n      \"strBadge\": \"string\",\n      \"strLogo\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "0b407799-9704-4ac1-9db3-9c55a1b41584",
+          "name": "Lookup Team",
+          "request": {
+            "name": "Lookup Team",
+            "description": {
+              "content": "Look up detailed information for a specific team by ID.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "lookupteam.php"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "id",
+                  "value": "<integer>",
+                  "description": "(Required) Team ID."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "1ac33271-4149-4b15-90b3-9d1d5f273c38",
+              "name": "Team details.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "lookupteam.php"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "id",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"teams\": [\n    {\n      \"idTeam\": \"string\",\n      \"strTeam\": \"string\",\n      \"strTeamShort\": \"string\",\n      \"strAlternate\": \"string\",\n      \"intFormedYear\": \"string\",\n      \"strLeague\": \"string\",\n      \"idLeague\": \"string\",\n      \"strStadium\": \"string\",\n      \"strStadiumLocation\": \"string\",\n      \"intStadiumCapacity\": \"string\",\n      \"strWebsite\": \"string\",\n      \"strFacebook\": \"string\",\n      \"strTwitter\": \"string\",\n      \"strInstagram\": \"string\",\n      \"strDescriptionEN\": \"string\",\n      \"strTeamBadge\": \"string\",\n      \"strTeamJersey\": \"string\",\n      \"strTeamFanart1\": \"string\",\n      \"strCountry\": \"string\",\n      \"strSport\": \"string\"\n    },\n    {\n      \"idTeam\": \"string\",\n      \"strTeam\": \"string\",\n      \"strTeamShort\": \"string\",\n      \"strAlternate\": \"string\",\n      \"intFormedYear\": \"string\",\n      \"strLeague\": \"string\",\n      \"idLeague\": \"string\",\n      \"strStadium\": \"string\",\n      \"strStadiumLocation\": \"string\",\n      \"intStadiumCapacity\": \"string\",\n      \"strWebsite\": \"string\",\n      \"strFacebook\": \"string\",\n      \"strTwitter\": \"string\",\n      \"strInstagram\": \"string\",\n      \"strDescriptionEN\": \"string\",\n      \"strTeamBadge\": \"string\",\n      \"strTeamJersey\": \"string\",\n      \"strTeamFanart1\": \"string\",\n      \"strCountry\": \"string\",\n      \"strSport\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "825a4433-3711-4a40-9de2-a85021683c17",
+          "name": "Lookup Player",
+          "request": {
+            "name": "Lookup Player",
+            "description": {
+              "content": "Look up detailed information for a specific player by ID.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "lookupplayer.php"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "id",
+                  "value": "<integer>",
+                  "description": "(Required) Player ID."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "5da5d86b-1930-44ad-9ad2-0d92b4990668",
+              "name": "Player details.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "lookupplayer.php"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "id",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"player\": [\n    {\n      \"idPlayer\": \"string\",\n      \"strPlayer\": \"string\",\n      \"strTeam\": \"string\",\n      \"strSport\": \"string\",\n      \"dateBorn\": \"1998-08-18\",\n      \"strNationality\": \"string\",\n      \"strPosition\": \"string\",\n      \"strDescriptionEN\": \"string\",\n      \"strThumb\": \"string\",\n      \"strCutout\": \"string\"\n    },\n    {\n      \"idPlayer\": \"string\",\n      \"strPlayer\": \"string\",\n      \"strTeam\": \"string\",\n      \"strSport\": \"string\",\n      \"dateBorn\": \"1996-06-18\",\n      \"strNationality\": \"string\",\n      \"strPosition\": \"string\",\n      \"strDescriptionEN\": \"string\",\n      \"strThumb\": \"string\",\n      \"strCutout\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "dfc0807f-c13f-4df5-a9c7-afedd2326498",
+          "name": "Lookup Event",
+          "request": {
+            "name": "Lookup Event",
+            "description": {
+              "content": "Look up detailed information for a specific sports event by ID.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "lookupevent.php"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "id",
+                  "value": "<integer>",
+                  "description": "(Required) Event ID."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "93ff6ef9-773b-4ba2-9c44-6d708f1141ca",
+              "name": "Event details.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "lookupevent.php"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "id",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"events\": [\n    {\n      \"idEvent\": \"string\",\n      \"strEvent\": \"string\",\n      \"strLeague\": \"string\",\n      \"idLeague\": \"string\",\n      \"strSeason\": \"string\",\n      \"strHomeTeam\": \"string\",\n      \"strAwayTeam\": \"string\",\n      \"intHomeScore\": \"string\",\n      \"intAwayScore\": \"string\",\n      \"dateEvent\": \"2014-05-17\",\n      \"strTime\": \"string\",\n      \"strVenue\": \"string\",\n      \"strStatus\": \"string\",\n      \"strThumb\": \"string\"\n    },\n    {\n      \"idEvent\": \"string\",\n      \"strEvent\": \"string\",\n      \"strLeague\": \"string\",\n      \"idLeague\": \"string\",\n      \"strSeason\": \"string\",\n      \"strHomeTeam\": \"string\",\n      \"strAwayTeam\": \"string\",\n      \"intHomeScore\": \"string\",\n      \"intAwayScore\": \"string\",\n      \"dateEvent\": \"1980-08-02\",\n      \"strTime\": \"string\",\n      \"strVenue\": \"string\",\n      \"strStatus\": \"string\",\n      \"strThumb\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a48cd13f-74b4-4f11-81b5-db4f285bcf06",
+          "name": "Lookup Table",
+          "request": {
+            "name": "Lookup Table",
+            "description": {
+              "content": "Returns the season standings table for a specific league.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "lookuptable.php"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "l",
+                  "value": "<integer>",
+                  "description": "(Required) League ID."
+                },
+                {
+                  "disabled": false,
+                  "key": "s",
+                  "value": "<string>",
+                  "description": "Season (e.g., 2026-2027)."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "e493c82f-0ba7-4190-b263-aeaad5a65d5a",
+              "name": "League standings table.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "lookuptable.php"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "l",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "s",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"table\": [\n    {\n      \"name\": \"string\",\n      \"teamid\": \"string\",\n      \"played\": \"string\",\n      \"win\": \"string\",\n      \"loss\": \"string\",\n      \"draw\": \"string\",\n      \"goalsfor\": \"string\",\n      \"goalsagainst\": \"string\",\n      \"goalsdifference\": \"string\",\n      \"total\": \"string\",\n      \"badge\": \"string\"\n    },\n    {\n      \"name\": \"string\",\n      \"teamid\": \"string\",\n      \"played\": \"string\",\n      \"win\": \"string\",\n      \"loss\": \"string\",\n      \"draw\": \"string\",\n      \"goalsfor\": \"string\",\n      \"goalsagainst\": \"string\",\n      \"goalsdifference\": \"string\",\n      \"total\": \"string\",\n      \"badge\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://www.thesportsdb.com/api/v1/json/3",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "a14b7f7a-5255-4ef0-ba46-8b294dc4240f",
+    "name": "TheSportsDB Events Lookup API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "An open, crowd-sourced sports database of artwork and metadata with a free sports API in JSON format. TheSportsDB provides data on sports leagues, teams, players, events, venues, and season standings across a wide range of sports worldwide. The v1 API is freely available; the v2 API requires a premium subscription.\n\nContact Support:\n Name: TheSportsDB",
+      "type": "text/plain"
+    }
+  }
+}
