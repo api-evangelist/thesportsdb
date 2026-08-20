@@ -25,6 +25,14 @@ tags:
   - Database
   - Free
   - Open Data
+  - Team
+  - Players
+  - Event
+tags_raw:
+  - Sports
+  - Database
+  - Free
+  - Open Data
   - Teams
   - Players
   - Events
@@ -39,6 +47,8 @@ apis:
   humanURL: https://www.thesportsdb.com/
   baseURL: https://www.thesportsdb.com/api/v1/json/3
   tags:
+  - Event
+  tags_raw:
   - Events
   properties:
   - type: OpenAPI
@@ -63,6 +73,8 @@ apis:
   humanURL: https://www.thesportsdb.com/
   baseURL: https://www.thesportsdb.com/api/v1/json/3
   tags:
+  - List
+  tags_raw:
   - Lists
   properties:
   - type: OpenAPI
