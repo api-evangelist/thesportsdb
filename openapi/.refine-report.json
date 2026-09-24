@@ -17,6 +17,13 @@
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
+  "notes": [
+    "thesportsdb-events-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "thesportsdb-lists-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "thesportsdb-lookup-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "thesportsdb-search-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "thesportsdb-seasons-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "apis.yml register: already-registered"
+  ],
   "skipped": []
 }

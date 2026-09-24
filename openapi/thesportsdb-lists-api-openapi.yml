@@ -1,4 +1,4 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
   title: TheSportsDB Events Lists API
   description: An open, crowd-sourced sports database of artwork and metadata with a free sports API in JSON format. TheSportsDB provides data on sports leagues, teams, players, events, venues, and season standings across a wide range of sports worldwide. The v1 API is freely available; the v2 API requires a premium subscription.
@@ -79,13 +79,6 @@ paths:
                 $ref: '#/components/schemas/TeamsResponse'
 components:
   schemas:
-    SportsResponse:
-      type: object
-      properties:
-        sports:
-          type: array
-          items:
-            $ref: '#/components/schemas/Sport'
     Team:
       type: object
       properties:
@@ -157,6 +150,19 @@ components:
           nullable: true
           items:
             $ref: '#/components/schemas/Team'
+    LeaguesResponse:
+      type: object
+      properties:
+        leagues:
+          type: array
+          nullable: true
+          items:
+            $ref: '#/components/schemas/League'
+        countries:
+          type: array
+          nullable: true
+          items:
+            $ref: '#/components/schemas/League'
     Sport:
       type: object
       properties:
@@ -199,16 +205,10 @@ components:
         strLogo:
           type: string
           description: URL to league logo.
-    LeaguesResponse:
+    SportsResponse:
       type: object
       properties:
-        leagues:
+        sports:
           type: array
-          nullable: true
           items:
-            $ref: '#/components/schemas/League'
-        countries:
-          type: array
-          nullable: true
-          items:
-            $ref: '#/components/schemas/League'
+            $ref: '#/components/schemas/Sport'
